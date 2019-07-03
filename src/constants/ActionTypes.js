@@ -1,0 +1,6 @@
+export const FAVORITE_SUCCESS = 'FAVORITE_SUCCESS'
+export const CHECKOUT_REQUEST = 'CHECKOUT_REQUEST'
+export const CHECKOUT_SUCCESS = 'CHECKOUT_SUCCESS'
+export const FILTER_SUCCESS = 'FILTER_SUCCESS'
+export const PRODUCTS_SUCCESS = 'PRODUCTS_SUCCESS'
+export const API = 'https://my-json-server.typicode.com/aero-frontend/test-task/'

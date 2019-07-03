@@ -1,0 +1,20 @@
+h1 {
+    color: #27aedb;
+    text-align: center;
+}
+.badge.favorite{
+    position: absolute;
+    right: 15px;
+    margin-top: 15px;
+    font-size: 100%;
+    cursor: pointer;
+}
+.badge-secondary.favorite.active,
+.badge-secondary.favorite:hover {
+    color: #e4e68c;
+    background-color: #f9a424;
+}
+.filter {
+    margin: 10px 20px;
+    display: flow-root;
+}
