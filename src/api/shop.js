@@ -6,7 +6,6 @@ import * as types from '../constants/ActionTypes'
 
 export default {
     getProducts: (cb, timeout) => (
-        //setTimeout(() => cb(_products), timeout || TIMEOUT)
         fetch(types.API + types.PRODUCTS_SUCCESS)
             .then(
                 response => response.json()
@@ -19,7 +18,6 @@ export default {
             )
     ),
     getFilteredProducts: (cb, timeout) => (
-        //setTimeout(() => cb(_products), timeout || TIMEOUT)
         fetch(types.API + types.FILTER_SUCCESS)
             .then(
                 response => response.json()
@@ -27,7 +25,11 @@ export default {
             .then(
                 data => (
                     cb(data.data.products)
-                    //console.log('then #1', data)
+                )
+            )
+            .catch(
+                error => (
+                    console.error(error)
                 )
             )
     )

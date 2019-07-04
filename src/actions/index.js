@@ -26,7 +26,13 @@ export const addToFavorite = productId => (dispatch, getState) => {
         .then(
             data => (
                 getState().products.byId[productId].inFav =  data.data.inFav,
-                dispatch(addToFavoriteUnsafe(productId))
+                dispatch(addToFavoriteUnsafe(productId)),
+                    console.log(data)
+            )
+        )
+        .catch(
+            error => (
+                console.error(error)
             )
         )
 }
