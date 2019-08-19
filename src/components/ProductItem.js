@@ -3,8 +3,6 @@ import PropTypes from 'prop-types'
 import Product from './Product'
 
 const ProductItem = ({product, onAddToFavoriteClicked}) => (
-    <div className="card mb-4 shadow-sm">
-
         <Product
             title={product.title}
             imgUrl={'/images/' +  product.imgUrl}
@@ -13,7 +11,6 @@ const ProductItem = ({product, onAddToFavoriteClicked}) => (
             inFav={product.inFav}
             onAddToFavoriteClicked={onAddToFavoriteClicked}
         />
-    </div>
 )
 
 ProductItem.propTypes = {

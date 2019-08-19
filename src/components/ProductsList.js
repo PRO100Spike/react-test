@@ -1,22 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Filter from './Filter'
 
-const ProductsList = ({title, children, applyFilterOnChange, resetFilterCliked}) => (
+const ProductsList = ({title, children}) => (
     <div>
-        <h3>{title}</h3>
-        <Filter applyFilterOnChange={applyFilterOnChange} resetFilterCliked={resetFilterCliked} />
         <div className="card-deck mb-3 text-center">
-            <div className="card-deck mb-3 text-center">{children}</div>
+            {children}
         </div>
     </div>
 )
 
 ProductsList.propTypes = {
     children: PropTypes.node,
-    title: PropTypes.string.isRequired,
-    applyFilterOnChange: PropTypes.func.isRequired,
-    resetFilterCliked: PropTypes.func.isRequired
+    title: PropTypes.string.isRequired
 }
 
 export default ProductsList

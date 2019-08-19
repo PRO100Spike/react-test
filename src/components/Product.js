@@ -2,27 +2,25 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import PropsList from './PropsList'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faStar} from "@fortawesome/free-solid-svg-icons";
+import {faHeart, faCartPlus} from "@fortawesome/free-solid-svg-icons";
+import Card from 'react-bootstrap/Card'
 
 const Product = ({title, imgUrl, link, params, inFav, onAddToFavoriteClicked}) => (
-    <div>
-        <div className="card-header">
-            <h4 className="my-0 font-weight-normal">
-                <a href={link}>
-                    {title}
-                </a>
-            </h4>
-        </div>
-        <img src={imgUrl} className="card-img-top" alt=""/>
-        {inFav}
-        <span className={'badge favorite badge-secondary ' + (inFav ? 'active' : '') } onClick={onAddToFavoriteClicked}>
-          <FontAwesomeIcon icon={faStar}/>
-        </span>
-        <h1 className="card-title pricing-card-title">Params</h1>
-        <div className="card-body">
-            <PropsList props={params} />
-        </div>
-    </div>
+    <Card style={{ width: '310px' }}>
+        <a className="product-link" href={link}>
+            <Card.Img variant="top" src={imgUrl} />
+            <Card.Body>
+                    <Card.Title>{title}</Card.Title>
+            </Card.Body>
+            <div className="card-footer-w-100">
+                <div className="price">10 990 руб.</div>
+                <div className="counter-block">
+                    <FontAwesomeIcon className={'favorite ' + (inFav ? 'active' : '') }  icon={faHeart} onClick={onAddToFavoriteClicked}/>
+                    <FontAwesomeIcon icon={faCartPlus}/>
+                </div>
+            </div>
+        </a>
+    </Card>
 )
 
 Product.propTypes = {

@@ -8,7 +8,6 @@ import reducer from './reducers'
 import { getAllProducts } from './actions'
 import App from './containers/App'
 
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const middleware = [ thunk ];

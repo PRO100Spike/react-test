@@ -1,3 +1,9 @@
+@font-face {
+    font-family: "NotoSans";
+    src: url("./fonts/ProximaNova_Regular.ttf") format("ttf");
+    font-weight: normal;
+    font-style: normal;
+}
 h1 {
     color: #27aedb;
     text-align: center;
@@ -17,4 +23,102 @@ h1 {
 .filter {
     margin: 10px 20px;
     display: flow-root;
+}
+.searchbar input {
+    max-width: 679px;
+}
+.app header {
+    display: inline-flex;
+    padding: 40px 70px;
+}
+.price {
+    height: 24px;
+    font-family: NotoSans;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #202020;
+}
+.product-link,
+.product-link:hover {
+    text-decoration: none;
+    color: unset;
+    color: none;
+    cursor: auto;
+}
+.card-footer-w-100 {
+    display: flex;
+    padding: 1.25rem;
+}
+.card-footer-w-100 div {
+    width: 50%;
+}
+.card-footer-w-100 div:first-child {
+    text-align: left;
+}
+.card-footer-w-100 div:last-child {
+    text-align: right;
+}
+.card-title {
+    text-align: left;
+}
+.card-deck .card {
+    border: 0;
+}
+.card-deck .card:hover {
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.15);
+}
+.app .card-img-top {
+    width: 270px;
+}
+.app .card-deck .card {
+    margin: 0;
+    margin-right: 20px;
+    padding: 1.25rem 0;
+}
+.app .card-deck .card:nth-child(3n) {
+    margin: 0;
+}
+.counter-block {
+    color: #0566ff;
+}
+.counter-block svg {
+    margin-left: 20px;
+    cursor: pointer;
+}
+.cd-filter-block {
+    margin-top: 130px;
+}
+
+.cd-filter-block .title {
+    font-family: NotoSans;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #202020;
+}
+.cd-filter-content {
+    list-style: none;
+    padding: 0;
+}
+.cd-filter-block input[type=radio], .cd-filter-block input[type=checkbox] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    z-index: 2;
+}
+.cd-filter-block input, .cd-filter-block select, .cd-filter-block .radio-label::before, .cd-filter-block .checkbox-label::before {
+    font-family: "Open Sans", sans-serif;
+    border-radius: 0;
+    background-color: #ffffff;
+    border: 2px solid #e6e6e6;
 }
