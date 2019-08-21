@@ -1,38 +1,94 @@
 import React from 'react'
+import Button from 'react-bootstrap/Button'
+import Form from 'react-bootstrap/Form'
+import {addToFavorite, applyFilter, resetFilter} from '../actions'
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faChevronCircleDown, faChevronCircleUp} from "@fortawesome/free-solid-svg-icons";
+import PropTypes from "prop-types";
+import {connect} from "react-redux";
+import {getVisibleProducts} from "../reducers/products";
 
 const Filter = ({applyFilterOnChange, resetFilterCliked}) => (
     <div className="filter">
-        <div className="searchbar form-group">
-            <div className="form-group row">
-                <div className="col">
-                    <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Search product by name..."
-                        onChange={applyFilterOnChange}
-                    />
-                </div>
-                <div className="col">
-                    <label htmlFor="colFormLabel" className="col-sm-2 col-form-label">Favorite:</label>
-                    <div className="form-check form-check-inline">
-                        <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" onChange={applyFilterOnChange} />
-                        <label className="form-check-label" htmlFor="inlineRadio1">Yes</label>
+        <div className="cd-filter-block">
+            <Form id="filter-rorm" applyFilterOnChange={applyFilter} resetFilterCliked={resetFilter}>
+                <span className="title">Цвет <FontAwesomeIcon icon={faChevronCircleUp} /></span>
+                {['checkbox'].map(type => (
+                    <div key={`inline-${type}`} className="color-filter mb-3">
+                        <Form.Check inline label="" type={type} id={`inline-${type}-1`} className="white" />
+                        <Form.Check inline label="" type={type} id={`inline-${type}-2`} className="black" />
+                        <Form.Check inline label="" type={type} id={`inline-${type}-3`} className="gray" />
+                        <Form.Check inline label="" type={type} id={`inline-${type}-4`} className="brown" />
+                        <Form.Check inline label="" type={type} id={`inline-${type}-5`} className="orange" />
+                        <Form.Check inline label="" type={type} id={`inline-${type}-6`} className="red" />
+                        <Form.Check inline label="" type={type} id={`inline-${type}-7`} className="green" />
+                        <Form.Check inline label="" type={type} id={`inline-${type}-8`} className="purple-blue" />
+                        <Form.Check inline label="" type={type} id={`inline-${type}-9`} className="blue" />
                     </div>
-                    <div className="form-check form-check-inline">
-                        <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" onChange={applyFilterOnChange} />
-                        <label className="form-check-label" htmlFor="inlineRadio2">No</label>
+                ))}
+                <span className="title">Материал <FontAwesomeIcon icon={faChevronCircleUp} /></span>
+                {['checkbox'].map(type => (
+                    <div key={`default-${type}`} className="styled-checkbox mb-3">
+                        <Form.Check
+                            type={type}
+                            id={`material-${type}-1`}
+                            label={`Вельвет`}
+                        />
+                        <Form.Check
+                            type={type}
+                            id={`material-${type}-2`}
+                            label={`Микровелюр`}
+                        />
+                        <Form.Check
+                            type={type}
+                            id={`material-${type}-3`}
+                            label={`Велюр`}
+                        />
+                        <Form.Check
+                            type={type}
+                            id={`material-${type}-4`}
+                            label={`Жаккард`}
+                        />
+                        <Form.Check
+                            type={type}
+                            id={`material-${type}-5`}
+                            label={`Замша`}
+                        />
+                        <Form.Check
+                            type={type}
+                            id={`material-${type}-6`}
+                            label={`Рогожка`}
+                        />
                     </div>
-                </div>
-                <div className="col-auto">
-                    <div className="toolbar">
-                        <button className="btn float-right btn-danger" onClick={resetFilterCliked}>
-                            <i className="fa fa-ban"></i> Reset
-                        </button>
+                ))}
+                <span className="title">Угол <FontAwesomeIcon icon={faChevronCircleUp} /></span>
+                {['checkbox'].map(type => (
+                    <div key={`default-${type}`} className="styled-checkbox mb-3">
+                        <Form.Check
+                            type={type}
+                            id={`tangle-${type}-1`}
+                            label={`Левый`}
+                        />
+                        <Form.Check
+                            type={type}
+                            id={`tangle-${type}-2`}
+                            label={`Правый`}
+                        />
+                        <Form.Check
+                            type={type}
+                            id={`tangle-${type}-3`}
+                            label={`Универсальный`}
+                        />
                     </div>
-                </div>
-            </div>
+                ))}
+                <Button variant="primary" size="lg" className="filter-btn" active onClick={applyFilterOnChange}>
+                    Применить
+                </Button>
+                <Button variant="light" size="lg" className="filter-btn" onClick={resetFilterCliked}>
+                    Очистить фильтр
+                </Button>
+            </Form>
         </div>
-
     </div>
 )
 

@@ -1,6 +1,6 @@
 @font-face {
     font-family: "NotoSans";
-    src: url("./fonts/ProximaNova_Regular.ttf") format("ttf");
+    src: url("/fonts/ProximaNova_Regular.ttf") format("ttf");
     font-weight: normal;
     font-style: normal;
 }
@@ -25,15 +25,25 @@ h1 {
     display: flow-root;
 }
 .searchbar input {
-    max-width: 679px;
+    width: 679px;
+}
+.cd-filter-block {
+    margin-top: 130px;
+}
+.logo {
+    margin-right: 130px;
+}
+.app .filter {
+    margin: 0 20px;
 }
 .app header {
     display: inline-flex;
     padding: 40px 70px;
+    width: 100%;
 }
 .price {
     height: 24px;
-    font-family: NotoSans;
+    font-family: "NotoSans";
     font-size: 16px;
     font-weight: bold;
     font-style: normal;
@@ -89,36 +99,219 @@ h1 {
     margin-left: 20px;
     cursor: pointer;
 }
-.cd-filter-block {
-    margin-top: 130px;
+.filter-btn {
+    width: 100%;
 }
-
+.color-filter .form-check input {
+    padding: 0;
+    height: initial;
+    width: initial;
+    margin-bottom: 0;
+    display: none;
+    cursor: pointer;
+}
+.color-filter .form-check label {
+    width: 36px;
+    height: 36px;
+    z-index: 8;
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid #9b9b9b;
+}
+.color-filter input:hover:checked + label:after {
+    opacity: 0.5;
+    cursor: pointer;
+}
+.color-filter input:checked + label:after {
+    content: '✔';
+    font-family: monospace;
+    display: block;
+    position: absolute;
+    top: 8px;
+    left: 14px;
+    width: 6px;
+    height: 14px;
+    z-index: 9;
+    color: #fff;
+}
+.app .form-check-inline {
+    margin-right: 10px;
+}
 .cd-filter-block .title {
-    font-family: NotoSans;
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+    font-family: "NotoSans";
     font-size: 16px;
     font-weight: bold;
     font-style: normal;
     font-stretch: normal;
     line-height: 1.5;
     letter-spacing: normal;
+}
+.cd-filter-block .title svg {
+    background: rgba(0,0,0,1);
+    background: -moz-radial-gradient(center, ellipse cover, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 60%, rgba(255,255,255,1) 60%, rgba(255,255,255,1) 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(0,0,0,1)), color-stop(60%, rgba(0,0,0,1)), color-stop(60%, rgba(255,255,255,1)), color-stop(100%, rgba(255,255,255,1)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 60%, rgba(255,255,255,1) 60%, rgba(255,255,255,1) 100%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 60%, rgba(255,255,255,1) 60%, rgba(255,255,255,1) 100%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 60%, rgba(255,255,255,1) 60%, rgba(255,255,255,1) 100%);
+    background: radial-gradient(ellipse at center, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 60%, rgba(255,255,255,1) 60%, rgba(255,255,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#ffffff', GradientType=1 );
+    font-size: 24px;
+    position: absolute;
+    right: 30px;
+    color: white;
+}
+.color-filter .white input:checked + label:after { color: #0566ff;}
+.color-filter .white label {background: #fff;}
+.color-filter .black input:checked + label:after { color: #ffffff;}
+.color-filter .black label {background: #000;}
+.color-filter .gray label {background: #5a5a5a;}
+.color-filter .brown label {background: #704d35;}
+.color-filter .orange label {background: #e0791d;}
+.color-filter .red label {background: #ba0606;}
+.color-filter .green label {background: #38a01a;}
+.color-filter .purple-blue label {background: #314976;}
+.color-filter .blue label {background: #3748a6;}
+
+.styled-checkbox input {
+    opacity: 0;
+}
+.styled-checkbox .form-check label {
+    cursor: pointer;
+}
+.styled-checkbox .form-check label:before {
+    content: "";
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: text-top;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border: 1px solid #9b9b9b;
+    border-radius: 4px;
+}
+.styled-checkbox .form-check:hover input:checked + label:before {
+    background: #044ab8;
+}
+.styled-checkbox .form-check:hover label:before {
+    border: 1px solid #0566ff;
+}
+.styled-checkbox .form-check input:checked + label:before {
+    background: #0566ff;
+    border: 1px solid #0566ff;
+}
+.favorite.active {
+    color: #e4b116;
+}
+.styled-checkbox .form-check input:checked + label:after {
+    content: '✔';
+    position: absolute;
+    left: 25px;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    font-family: monospace;
+    color: #fff;
+}
+.counter-right__block ul {
+    display: inline-flex;
+    list-style: none;
+}
+.counter-right__block ul li {
+    display: inline-block;
+}
+.counter-right__block ul li:not(:last-child){
+    margin-right: 20px;
+}
+.counter-right__block ul li span {
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+    background: #f5f5f5;
+}
+.filter-btn.btn-primary:hover {
+    background: #044ab8;
+}
+.app .breadcrumb {
+    background: none;
+}
+.app .breadcrumb a:hover {
+    color: #0566ff;
+}
+.app .breadcrumb a {
     color: #202020;
 }
-.cd-filter-content {
+.app .bg-light {
+    background: none !important;
+}
+.nav-link:not(:last-child) {
+    margin-right: 70px;
+}
+.app .navbar-light .navbar-nav .nav-link {
+    color: #202020;
+    font-weight: bold;
+}
+.app .dropdown.show > a {
+    color: #0566ff !important;
+}
+.footer {
+    width: 100%;
+    height: 152px;
+    padding: 40px 70px;
+    background-color: #f5f5f5;
+    margin-top: 110px;
+}
+.footer .bootom-list {
     list-style: none;
+    display: inline-flex;
     padding: 0;
 }
-.cd-filter-block input[type=radio], .cd-filter-block input[type=checkbox] {
-    position: absolute;
-    left: 0;
-    top: 0;
-    margin: 0;
-    padding: 0;
-    opacity: 0;
-    z-index: 2;
+.footer .bootom-list li:hover {
+    color: #0566ff;
 }
-.cd-filter-block input, .cd-filter-block select, .cd-filter-block .radio-label::before, .cd-filter-block .checkbox-label::before {
-    font-family: "Open Sans", sans-serif;
-    border-radius: 0;
-    background-color: #ffffff;
-    border: 2px solid #e6e6e6;
+.footer .bootom-list li {
+    margin-left: 5px;
+    border-radius: 2px;
+    padding: 4px 15px;
+    background-color: #fff;
+    cursor: pointer;
+}
+.footer .phone-text {
+    font-family: "NotoSans";
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.83;
+    letter-spacing: normal;
+    text-align: right;
+    color: #202020;
+}
+.copyrait {
+    font-family: "NotoSans";
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.83;
+    letter-spacing: normal;
+    color: #9b9b9b;
+}
+.footer .phone {
+    font-family: "NotoSans";
+    font-size: 20px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.1;
+    letter-spacing: normal;
+    text-align: right;
+    color: #202020;
+}
+@media (min-width: 1200px) {
+    .app .container {
+        max-width: 1440px;
+    }
 }

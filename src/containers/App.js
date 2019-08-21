@@ -1,27 +1,17 @@
 import React from 'react'
 import ProductsContainer from './ProductsContainer'
-import Search from '../components/Search'
+import Footer from './Footer'
+import Header from './Header'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import NavDropdown from 'react-bootstrap/NavDropdown'
-
 import '../styles/App.css';
-import PropTypes from "prop-types";
 
-const App = ({applySearchOnChange}) => (
+
+const App = () => (
   <div className="app">
-      <header>
-          <div className="logo">
-              <img src="/images/combined-shape.svg" alt="" />
-          </div>
-          <Search applyFilterOnChange={applySearchOnChange} />
-          <div className="counter-right__block">
-                <ul>
-                    <li className="favorite-count">10</li>
-                    <li className="product-in-cart-count">2</li>
-                </ul>
-          </div>
-      </header>
+      <Header />
+
       <Navbar bg="light" expand="lg" className="border">
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -46,12 +36,9 @@ const App = ({applySearchOnChange}) => (
       <div className="container">
         <ProductsContainer />
       </div>
+
+      <Footer />
   </div>
 )
-
-App.prototype = {
-    applyFilterOnChange: PropTypes.func.isRequired,
-    resetFilterCliked: PropTypes.func.isRequired
-}
 
 export default App

@@ -44,6 +44,8 @@ export const applyFilter = () => dispatch => {
 }
 
 export const resetFilter = () => dispatch => {
+    //$("input[type=text], textarea").val("");
+    document.getElementById('filter-rorm').reset();
     shop.getProducts(products => {
         dispatch(receiveProducts(products))
     })
